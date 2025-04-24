@@ -6,8 +6,8 @@
 ## Maintainer: Sunil Patel
 ## Email: snlpatel01213@hotmail.com
 ## Linkedin: https://www.linkedin.com/in/linus1/
-## Contributor : {if you debug, append your name here}
-## Contributor Email : {if you debug, append your email here}
+## Contributor : Shreyak Chakraborty
+## Contributor Email : shreyak.rekshda@gmail.com
 ## Status: active
 """
 
@@ -20,14 +20,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 def heatmap(tfidf_matrix, title, xlabel, ylabel, xticklabels, yticklabels):
     """
     To plot tfidf_matrix using matplotlib
-    
+
     :param tfidf_matrix:  cooccurance matrix
     :param title: Title of the plot
     :param xlabel: x label
     :param ylabel: y label
     :param xticklabels: x ticks
     :param yticklabels: y ticlks
-    :return: 
+    :return:
     """
 
     # Plot it out
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     ]
     vectorizer = TfidfVectorizer()
     X = vectorizer.fit_transform(corpus)
-    print(vectorizer.get_feature_names())
+    print(vectorizer.get_feature_names_out())
     print(csr_matrix.todense(X))
 
-    heatmap(np.array(csr_matrix.todense(X)), "", "", "", vectorizer.get_feature_names(), corpus)
+    heatmap(np.array(csr_matrix.todense(X)), "", "", "", vectorizer.get_feature_names_out(), corpus)

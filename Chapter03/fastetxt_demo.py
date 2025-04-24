@@ -6,8 +6,8 @@
 ## Maintainer: Sunil Patel
 ## Email: snlpatel01213@hotmail.com
 ## Linkedin: https://www.linkedin.com/in/linus1/
-## Contributor : {if you debug, append your name here}
-## Contributor Email : {if you debug, append your email here}
+## Contributor : Shreyak Chakraborty
+## Contributor Email : shreyak.rekshda@gmail.com
 ## Status: active
 """
 
@@ -20,12 +20,12 @@ writer = SummaryWriter()
 if __name__ == "__main__":
 
     # Skipgram model
-    model = fasttext.skipgram('data/testdata_en.txt', 'model')
+    model = fasttext.train_unsupervised("data/testdata_en.txt", model='skipgram', lr=0.05, dim=100, ws=5, epoch=5)
     words = model.words  # list of words in dictionary
     print("words present in the model : ", words)
 
     # # CBOW model
-    # model = fasttext.cbow('data/testdata_en.txt', 'model')
+    # model = fasttext.train_unsupervised("data/testdata_en.txt", model='cbow', lr=0.05, dim=100, ws=5, epoch=5)
     # print (model.words) # list of words in dictionary
 
     # I am using only  Skipgram model model
