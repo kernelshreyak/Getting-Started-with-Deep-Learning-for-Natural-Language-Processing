@@ -25,7 +25,7 @@ if __name__ == "__main__":
     print("words present in the model : ", words)
 
     # # CBOW model
-    # model = fasttext.train_unsupervised("train.txt", model='cbow', lr=0.05, dim=100, ws=5, epoch=5)
+    # model = fasttext.train_unsupervised("data/testdata_en.txt", model='cbow', lr=0.05, dim=100, ws=5, epoch=5)
     # print (model.words) # list of words in dictionary
 
     # I am using only  Skipgram model model
